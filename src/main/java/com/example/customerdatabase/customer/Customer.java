@@ -23,7 +23,7 @@ public class Customer {
     Date date_of_transaction;
 
     protected Customer(){
-        // protected constructor since it shouldnt be used directly
+        // protected constructor since it shouldn't be used directly
     }
     public Customer(Long id, String first_name, String last_name, String phone_model, Long IMEI, String notes, Date date_of_transaction) {
         this.id = id;
@@ -34,6 +34,15 @@ public class Customer {
         this.notes = notes;
         this.date_of_transaction = date_of_transaction;
     }
+    public Customer( String first_name, String last_name, String phone_model, Long IMEI, String notes, Date date_of_transaction){
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.phone_model = phone_model;
+        this.IMEI = IMEI;
+        this.notes = notes;
+        this.date_of_transaction = date_of_transaction;
+    }
+
 
     public Long getId() {
         return id;
@@ -82,4 +91,18 @@ public class Customer {
     public void setDate_of_transaction(Date date_of_transaction) {
         this.date_of_transaction = date_of_transaction;
     }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", first_name='" + first_name + '\'' +
+                ", last_name='" + last_name + '\'' +
+                ", phone_model='" + phone_model + '\'' +
+                ", IMEI=" + IMEI +
+                ", notes='" + notes + '\'' +
+                ", date_of_transaction=" + date_of_transaction +
+                '}';
+    }
+
 }

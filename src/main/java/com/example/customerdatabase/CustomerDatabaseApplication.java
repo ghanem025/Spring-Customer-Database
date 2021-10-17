@@ -17,16 +17,4 @@ public class CustomerDatabaseApplication {
 		SpringApplication.run(CustomerDatabaseApplication.class, args);
 	}
 
-	@Bean
-	public CommandLineRunner commandLineRunner(ApplicationContext ctx){
-		return args -> {
-			System.out.println("print out beans");
-			String [] bean_names = ctx.getBeanDefinitionNames();
-			Arrays.sort(bean_names);
-			for (String b : bean_names){
-				//System.out.println(b);
-			}
-		};
-	}
-
 }

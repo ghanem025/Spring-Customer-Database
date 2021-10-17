@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class CustomerController {
 
@@ -17,8 +19,9 @@ public class CustomerController {
     }
 
     @GetMapping("/customer")
-    public String CustomerDisplay(){
-        return "Customer go here";
-    }
+    public List<Customer> CustomerDisplay(){
+        return customerService.getCustomers();
+    }// call from customerservice and
+    //return a list of all customers in the database.
 
 }
