@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 public class CustomerDatabaseApplication {
-
+	//set up done for linux
 	public static void main(String[] args) {
 		SpringApplication.run(CustomerDatabaseApplication.class, args);
 	}
