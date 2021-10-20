@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class CustomerService {
@@ -18,5 +19,14 @@ public class CustomerService {
     @GetMapping
     public List<Customer> getCustomers(){
         return customerRepository.findAll();// return all the customers in the database;
+    }
+
+    @GetMapping
+    public String isInDatabase(Long id){
+        Optional<Customer> c  = customerRepository.findById(id);
+        if(c.isPresent()){
+            return c.get().getFirst_name() + " is in the database";
+        }
+        return c.get().getFirst_name() + " is not in the database";
     }
 }
